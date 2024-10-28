@@ -7,12 +7,10 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                make clean
-                make all
-                echo "Building.."
-                sh '''
-                echo "doing build stuff.."
-                '''
+                sh '''echo "Building.."'''
+                sh 'make clean'
+                sh 'make all'
+
             }
         }
         stage('SonarQube Analysis') {
@@ -24,18 +22,13 @@ pipeline {
                     }
                 }*/
                 echo "SonarQube.."
-                sh '''
-                echo "doing SonarQube stuff.."
-                '''
+                sh '''echo "doing SonarQube stuff.."'''
             }     
         }
         stage('Deliver') {
             steps {
                 make distribute
-                echo 'Deliver....'
-                sh '''
-                echo "doing delivery stuff.."
-                '''
+                sh '''echo "doing delivery stuff.."'''
             }
         }
     }
