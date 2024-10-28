@@ -7,6 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'apk add --no-cache make'
                 sh '''echo "Building.."'''
                 sh 'make clean'
                 sh 'make all'
