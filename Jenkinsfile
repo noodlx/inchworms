@@ -1,8 +1,7 @@
 pipeline {
     agent { 
         node {
-            image 'gcc:latest'
-            label 'docker-agent-alpine'
+            label 'docker-agent-gcc'
             }
       }
     stages {
