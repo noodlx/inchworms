@@ -1,0 +1,6 @@
+# binaries
+bin
+
+# ci
+Jenkinsfile
+sonar-project.properties
